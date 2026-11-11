@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280">
+  <meta name="description" content="Nepal Zebra fish in Nature Center">
+  <title>Nepal Zebra fish in Nature Center</title>
+  
+  <!-- Google Fonts: Cormorant Garamond (Serif Headers/Titles) & Plus Jakarta Sans (Clean Sans-Serif Body/Minor Text) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & VARIABLES
+       ========================================================================== */
+    :root {
+      --primary-blue: #1b12b2;
+      --primary-hover: #120b8a;
+      --cyan-accent: #00b4d8;
+      --cyan-light: #e6f7f9;
+      --text-dark: #000000;
+      --text-body: #000000;
+      --text-muted: #111111;
+      --bg-light: #f8f9fa;
+      --bg-card: #ffffff;
+      --border-color: #e2e5ec;
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --max-width: 1380px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-main);
+      color: var(--text-dark);
+      background-color: #fcfdfe;
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    
+    .container {
+      width: min(var(--max-width), calc(100% - 60px));
+      margin-inline: auto;
+    }
+
+    /* ==========================================================================
+       EXACT NAVIGATION BAR DESIGN WITH DROPDOWNS
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: #ffffff;
+      border-bottom: 1.5px solid #222222;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      height: 80px;
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    /* Left Brand Section with Duke Logo Image */
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 0 28px;
+      height: 100%;
+      border-right: 1.5px solid #666666;
+      background: #ffffff;
+      cursor: pointer;
+    }
+
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      height: 100%;
+    }
+
+    .brand-duke-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 700;
+      color: #1b12b2;
+      letter-spacing: 0.02em;
+    }
+
+    /* Main Navigation Links with Dropdown Menu Hovering */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+      flex-grow: 1;
+      height: 100%;
+    }
+
+    .nav-item {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-item > a {
+      color: #000000;
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      height: 100%;
+      padding: 0 4px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-item:hover > a {
+      color: #1b12b2;
+    }
+
+    .nav-item > a span.arrow {
+      font-size: 10px;
+      color: #000000;
+      transform: translateY(1px);
+    }
+
+    /* Dropdown Menu Styles (Using Cormorant Garamond / Serif) */
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #1e1e1e;
+      min-width: 210px;
+      padding: 22px 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+      z-index: 1001;
+    }
+
+    .dropdown-menu::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: 35%;
+      right: 35%;
+      height: 2px;
+      background-color: #ffffff;
+    }
+
+    .nav-item:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dropdown-menu a {
+      color: #ffffff;
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.3;
+      transition: color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover {
+      color: #00b4d8;
+    }
+
+    /* Right Search & Mobile Toggle Controls */
+    .header-right {
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .nav-search-btn {
+      background: transparent;
+      border: none;
+      color: #1b12b2;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      color: var(--primary-blue);
+    }
+
+    .mobile-nav-toggle svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    /* ==========================================================================
+       DYNAMIC DUAL HERO SLIDER SECTION
+       ========================================================================== */
+    .hero {
+      position: relative;
+      height: 85vh;
+      min-height: 580px;
+      color: #ffffff;
+      overflow: hidden;
+    }
+
+    .hero-slides {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 90px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(8, 15, 30, 0.35) 0%, rgba(8, 15, 30, 0.75) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 5.5vw, 64px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+      color: #ffffff;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    .hero-controls {
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      display: flex;
+      gap: 12px;
+      z-index: 10;
+    }
+
+    .arrow-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(6px);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+
+    .arrow-btn:hover {
+      background: #ffffff;
+      color: var(--primary-blue);
+    }
+
+    /* ==========================================================================
+       ABOUT SECTION
+       ========================================================================== */
+    .about-section {
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .section-kicker {
+      font-family: var(--font-main);
+      font-size: 14px;
+      font-weight: 700;
+      color: #000000;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .section-kicker::before {
+      content: "°°";
+      color: var(--primary-blue);
+    }
+
+    .about-title {
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 4vw, 56px);
+      font-weight: 700;
+      color: var(--primary-blue);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 30px;
+    }
+
+    .about-text {
+      font-family: var(--font-main);
+      font-size: 16px;
+      color: #000000;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      font-weight: 400;
+    }
+
+    .btn-rounded-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 36px;
+      border: 1.5px solid var(--cyan-accent);
+      border-radius: 0px;
+      color: #000000;
+      background: #ffffff;
+      font-family: var(--font-main);
+      font-size: 15px;
+      font-weight: 600;
+      transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    }
+
+    .btn-rounded-outline:hover {
+      background: var(--cyan-accent);
+      color: #ffffff;
+      border-color: var(--cyan-accent);
+    }
+
+    .about-image-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .about-image-wrap img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+    }
+
+    .vertical-tag {
+      position: absolute;
+      right: -30px;
+      bottom: 90px;
+      transform: rotate(-90deg);
+      font-family: var(--font-serif);
+      font-size: 72px;
+      font-weight: 700;
+      color: #ffffff;
+      opacity: 0.95;
+      pointer-events: none;
+      letter-spacing: -0.02em;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    /* ==========================================================================
+       FOUR PILLARS SECTION
+       ========================================================================== */
+    .pillars-section {
+      padding: 110px 0 130px;
+      background-color: #f7f9fc;
+    }
+
+    .pillars-header {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .pillars-header h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 4.5vw, 58px);
+      color: var(--primary-blue);
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .pillar-card {
+      background: #ffffff;
+      padding: 36px 28px;
+      border-radius: 16px;
+      border: 1px solid var(--border-color, #e2e8f0);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .pillar-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #f0f3ff;
+      color: var(--primary-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 24px;
+      flex-shrink: 0;
+    }
+
+    .pillar-title {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--primary-blue);
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+
+    .pillar-desc {
+      font-family: var(--font-main);
+      font-size: 15px;
+      color: #000000;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+
+    /* ==========================================================================
+       MEDIA / VIDEO BANNER SECTION
+       ========================================================================== */
+    .media-banner {
+      position: relative;
+      height: 500px;
+      background: url('https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1800&q=85') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 8%;
+    }
+
+    .media-banner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(0,0,0,0.1), rgba(0,0,0,0.55));
+    }
+
+    .video-play-badge {
+      position: relative;
+      z-index: 2;
+      background: #17191b;
+      color: #ffffff;
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-main);
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    .video-play-badge:hover {
+      background: var(--primary-blue);
+    }
+
+    /* ==========================================================================
+       RECENT NEWS SECTION (3 CARDS IN A ROW)
+       ========================================================================== */
+    .recent-news-section {
+      padding: 100px 0 60px;
+      background-color: #fcfdfe;
+    }
+
+    .recent-news-header {
+      margin-bottom: 40px;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .news-card {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .news-image-wrap {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .news-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .news-content {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .news-date {
+      font-family: var(--font-main);
+      font-size: 13px;
+      font-weight: 700;
+      color: #008fa8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .news-title {
+      font-family: var(--font-serif);
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--primary-blue);
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+
+    .news-excerpt {
+      font-family: var(--font-main);
+      font-size: 15px;
+      color: #000000;
+      line-height: 1.65;
+      margin-bottom: 20px;
+      flex-grow: 1;
+      font-weight: 400;
+    }
+
+    .news-link {
+      font-family: var(--font-main);
+      color: var(--primary-blue);
+      font-weight: 700;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s ease;
+    }
+
+    /* ==========================================================================
+       PROJECTS SECTION
+       ========================================================================== */
+    .projects-section {
+      padding: 80px 0 110px;
+      background: #ffffff;
+    }
+
+    .projects-header {
+      margin-bottom: 50px;
+    }
+
+    .projects-grid-layout {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .project-card-vertical {
+      height: 520px;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 32px;
+      color: #ffffff;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.06);
+    }
+
+    .project-card-vertical::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.88) 100%);
+    }
+
+    .project-card-content {
+      position: relative;
+      z-index: 3;
+    }
+
+    .project-card-content h3 {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .project-card-content p {
+      font-family: var(--font-main);
+      font-size: 15px;
+      color: #ffffff;
+      opacity: 1;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+
+    .project-card-content a {
+      font-family: var(--font-main);
+      color: #85e8ff;
+      font-weight: 700;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ==========================================================================
+       VOLUNTEER CTA SECTION (TOPOGRAPHIC CONTOUR WEB PATTERN)
+       ========================================================================== */
+    .volunteer-section {
+      padding: 140px 0;
+      background-color: #ffffff;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600' viewBox='0 0 1200 600'%3E%3Cg fill='none' stroke='%238ee5ee' stroke-width='1.5' stroke-opacity='0.65'%3E%3Cpath d='M-100 80 Q 200 -40 500 120 T 1100 60 T 1300 200' /%3E%3Cpath d='M-100 160 Q 250 20 550 200 T 1050 140 T 1300 280' /%3E%3Cpath d='M-100 240 Q 180 120 480 270 T 980 220 T 1300 360' /%3E%3Cpath d='M-100 320 Q 300 200 600 340 T 1150 290 T 1300 440' /%3E%3Cpath d='M-100 400 Q 220 280 520 420 T 1020 380 T 1300 520' /%3E%3Cpath d='M-100 480 Q 350 360 650 490 T 1200 450 T 1300 600' /%3E%3Cpath d='M-100 0 Q 300 -80 700 40 T 1200 10' /%3E%3Cpath d='M-100 560 Q 400 420 800 550 T 1300 580' /%3E%3Cpath d='M 100 650 Q 450 300 850 500 T 1250 250' /%3E%3Cpath d='M -50 350 C 200 550 450 150 750 350 C 1050 550 1150 150 1300 250' /%3E%3Cpath d='M -50 150 C 300 350 550 -50 850 150 C 1150 350 1250 -50 1350 100' /%3E%3C/g%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .volunteer-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .volunteer-title {
+      font-family: var(--font-serif);
+      font-size: clamp(42px, 6vw, 80px);
+      font-weight: 700;
+      color: #0b0bbd;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      line-height: 1.05;
+    }
+
+    .volunteer-desc {
+      font-family: var(--font-main);
+      font-size: 17px;
+      color: #000000;
+      line-height: 1.85;
+      margin-bottom: 40px;
+      max-width: 740px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 400;
+    }
+
+    /* ==========================================================================
+       PARTNERS / COLLABORATORS SECTION
+       ========================================================================== */
+    .partners-section {
+      padding: 100px 0 120px;
+      background: #f8f9fa;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .partners-title {
+      font-family: var(--font-serif);
+      font-size: clamp(30px, 3.5vw, 48px);
+      color: var(--primary-blue);
+      font-weight: 700;
+      margin-bottom: 50px;
+      max-width: 480px;
+      line-height: 1.2;
+    }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 32px 20px;
+      align-items: start;
+      justify-items: center;
+    }
+
+    .partner-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
+    }
+
+    .partner-icon-avatar {
+      width: 162px;
+      height: 162px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #ffffff;
+      padding: 4px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .partner-name {
+      font-family: var(--font-main);
+      font-size: 16px;
+      font-weight: 600;
+      color: #000000;
+    }
+
+    /* ==========================================================================
+       SUPPORT / CONTRIBUTE / DONATE BANNER
+       ========================================================================== */
+    .support-donate-banner {
+      background-color: #212322;
+      color: #ffffff;
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .support-banner-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .support-heading-text {
+      font-family: var(--font-serif);
+      font-size: clamp(48px, 6.5vw, 100px);
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+    }
+
+    .support-heading-text .styled-help {
+      background: linear-gradient(90deg, #ffb2cc, #79b0ff, #f3cf7a, #85e8ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 500;
+    }
+
+    .donate-oval-btn {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      border: 1.5px solid #ffcc66;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-family: var(--font-main);
+      font-size: 18px;
+      font-weight: 600;
+      flex-shrink: 0;
+      transition: background 0.3s ease;
+    }
+
+    .donate-oval-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* ==========================================================================
+       7. COMPACT MULTI-COLUMN THEME FOOTER (REMOTE GARAMOND SCRIPT & INCREASED SIZE)
+       ========================================================================== */
+    .site-footer {
+      background-color: #ffffff;
+      color: #000000;
+      padding: 30px 0 16px;
+      font-family: var(--font-serif);
+    }
+
+    .footer-grid-multi {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(4, 1fr);
+      gap: 24px;
+      padding-bottom: 18px;
+      border-bottom: 1.5px solid #cccccc;
+    }
+
+    .footer-col-brand h3 {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-col-brand p.sub-org {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 600;
+      color: #000000;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .footer-contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-weight: 500;
+      color: #000000;
+      opacity: 1;
+      margin-bottom: 12px;
+    }
+
+    .footer-contact-info a {
+      color: #007b9e;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-contact-info a:hover {
+      color: #005b78;
+      text-decoration: underline;
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .social-icon-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #eaf5f8;
+      color: #007b9e;
+      display: grid;
+      place-items: center;
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+
+    .social-icon-btn:hover {
+      background: #d5edf3;
+      transform: translateY(-2px);
+    }
+
+    .social-icon-btn svg {
+      width: 17px;
+      height: 17px;
+      fill: #007b9e;
+    }
+
+    .footer-column h4 {
+      font-family: var(--font-serif);
+      font-size: 19px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1.5px solid #cccccc;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footer-column ul li a {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-weight: 500;
+      color: #000000;
+      opacity: 1;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-column ul li a:hover {
+      color: #007b9e;
+    }
+
+    .footer-bottom-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 14px;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 500;
+      color: #000000;
+      opacity: 1;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid-multi {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .footer-col-brand {
+        grid-column: span 3;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container { width: calc(100% - 32px); }
+      .header-inner { justify-content: space-between; padding: 0 16px; }
+      
+      .mobile-nav-toggle { display: block; }
+      
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        border-bottom: 1.5px solid #222222;
+        padding: 20px 24px;
+        height: auto;
+        gap: 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.35s ease, opacity 0.3s ease, visibility 0.3s ease;
+      }
+
+      .nav-links.is-active {
+        max-height: 600px;
+        opacity: 1;
+        visibility: visible;
+        overflow-y: auto;
+      }
+
+      .nav-item {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .nav-item:last-child {
+        border-bottom: none;
+      }
+
+      .nav-item > a {
+        width: 100%;
+        padding: 14px 0;
+        justify-content: space-between;
+        font-size: 20px;
+      }
+
+      .dropdown-menu {
+        position: static;
+        transform: none;
+        background-color: #262626;
+        width: 100%;
+        padding: 12px 18px;
+        box-shadow: none;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        margin-bottom: 12px;
+        border-radius: 6px;
+      }
+
+      .dropdown-menu::before {
+        display: none;
+      }
+
+      .nav-item.open .dropdown-menu {
+        display: flex;
+      }
+
+      .pillars-grid { grid-template-columns: 1fr; }
+      .projects-grid-layout { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .support-banner-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-grid-multi { grid-template-columns: 1fr; gap: 30px; }
+      .footer-bottom-bar { flex-direction: column; text-align: center; gap: 15px; }
+      .donate-oval-btn { width: 140px; height: 140px; font-size: 18px; }
+    }
+  
+    /* Touch/mobile devices: bigger navigation bar (desktop/laptop unchanged) */
+    @media (hover: none) and (pointer: coarse) {
+      html, body { overflow-x: hidden; }
+      .header-inner { height: 110px; }
+      .brand-section { padding: 0 24px; gap: 14px; flex-shrink: 0; white-space: nowrap; }
+      .brand-logo-wrap { gap: 14px; }
+      .brand-duke-logo { width: 64px; height: 64px; flex-shrink: 0; }
+      .brand-title { font-size: 34px; }
+      .nav-links { gap: 30px; flex-wrap: nowrap; min-width: 0; }
+      .nav-item > a { font-size: 26px; gap: 8px; white-space: nowrap; }
+      .nav-item > a span.arrow { font-size: 13px; }
+      .dropdown-menu { min-width: 260px; padding: 28px 30px; gap: 20px; }
+      .dropdown-menu a { font-size: 24px; }
+      .header-right { padding: 0 28px; flex-shrink: 0; }
+      .nav-search-btn svg { width: 32px; height: 32px; }
+    }
+
+    /* Touch/mobile devices: taller hero (laptop unchanged) */
+    @media (hover: none) and (pointer: coarse) {
+      .hero { height: 620px; min-height: 0; }
+      .hero-slide { padding-bottom: 90px; }
+      .hero h1 { margin-bottom: 14px; }
+      .hero-controls { bottom: 20px; right: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+     HEADER / NAVIGATION WITH DROPDOWNS & DUKE LOGO
+     ========================================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand-section" aria-label="Go to Home">
+        <div class="brand-logo-wrap">
+          <img src="Image/english.png" alt="nzin Logo" class="brand-duke-logo" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80';">
+          <span class="brand-title">NZINC</span>
+        </div>
+      </a>
+      
+      <nav class="nav-links" id="navLinks" aria-label="Main Menu">
+        <div class="nav-item">
+          <a href="index.html">Home</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="about.html" class="dropdown-toggle">About Us <span class="arrow"></span></a>
+          <div class="dropdown-menu">
+            <a href="about.html#who-we-are">Who are we?</a>
+            <a href="about.html#mission">Our Mission</a>
+            <a href="about.html#community">Why Community?</a>
+            <a href="about.html#impact">Our Impact</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="projects.html" class="dropdown-toggle">Our Work <span class="arrow"></span></a>
+          <div class="dropdown-menu">
+            <a href="projects.html#focus-areas">Focus Areas</a>
+            <a href="projects.html#projects">Projects</a>
+            <a href="projects.html#stories">Success Stories</a>
+            <a href="projects.html#initiatives">Established Initiatives</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="partners.html" class="dropdown-toggle">Partners <span class="arrow"></span></a>
+          <div class="dropdown-menu">
+            <a href="partners.html#partners">Partners</a>
+            <a href="partners.html#donors">Donors</a>
+            <a href="partners.html#affiliations">Affiliations</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="#resources" class="dropdown-toggle">Resources <span class="arrow"></span></a>
+          <div class="dropdown-menu">
+            <a href="publications.html">Publications</a>
+            <a href="gallery.html">Media Library</a>
+            <a href="news.html">News</a>
+            <a href="faq.html">FAQ</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="contact.html" class="dropdown-toggle">Get Involved <span class="arrow"></span></a>
+          <div class="dropdown-menu">
+            <a href="donate.html">Donate</a>
+            <a href="volunteer.html">Become a Volunteer</a>
+            <a href="careers.html">Careers</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-right">
+        <button class="nav-search-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <button class="mobile-nav-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+       DYNAMIC HERO SLIDER SECTION (3 SLIDES WITH SPECIFIC TEXT AND IMAGES)
+       ========================================================================== -->
+    <section class="hero">
+      <div class="hero-slides">
+        <!-- Slide 1 -->
+        <div class="hero-slide active" style="background-image: url('Image/Zebra.jpg');">
+          <div class="hero-overlay"></div>
+          <div class="container hero-content">
+            <h1>Exploring Nepal’s Native Zebrafish and <br>Protecting Aquatic Ecosystems.</h1>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="hero-slide" style="background-image: url('Image/zebra2.webp');">
+          <div class="hero-overlay"></div>
+          <div class="container hero-content">
+            <h1>Understanding Zebrafish Diversity and <br>Conserving Their Natural Habitats.</h1>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="hero-slide" style="background-image: url('Image/zebra3.webp');">
+          <div class="hero-overlay"></div>
+          <div class="container hero-content">
+            <h1>Discovering Native Zebrafish Diversity and <br>Understanding Their Ecological Adaptations.</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-controls">
+        <button class="arrow-btn" id="prevHeroBtn" aria-label="Previous slide">←</button>
+        <button class="arrow-btn" id="nextHeroBtn" aria-label="Next slide">→</button>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       ABOUT SECTION
+       ========================================================================== -->
+    <section class="about-section">
+      <div class="container about-grid">
+        <div>
+          <p class="section-kicker">Who We Are</p>
+          <h2 class="about-title">Advancing Science, Conserving Biodiversity, and Building a Sustainable Future for Nepal.</h2>
+          <p class="about-text">
+            Nepal Zebrafish in Nature Center (NZINC) is a non-profit, non-political, public-interest research organization dedicated to advancing scientific research, molecular and phenotypic diagnostics, biodiversity conservation, and sustainable agriculture in Nepal. Our work brings together research, innovation, and community engagement to address emerging challenges in environmental sustainability, agriculture, and food security.
+          </p>
+          <p class="about-text">
+            Our research spans zebrafish and other fish species, indigenous and improved livestock, crop protection, and climate change. Through field-based investigations, laboratory research, policy advocacy, and agricultural extension, we work to generate scientific knowledge, support evidence-based decisions, and strengthen the connection between research and practical solutions.
+          </p>
+          <p class="about-text">
+            We envision an inclusive, science-driven future where biodiversity is valued, agricultural systems are resilient, and scientific knowledge contributes to the well-being of communities and the sustainable management of Nepal's natural resources.
+          </p>
+        </div>
+        <div class="about-image-wrap">
+          <img src="Image/aa.webp" alt="Local Nepalese women engaged in community farming">
+          <div class="vertical-tag">#NZINC</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       FOUR PILLARS SECTION
+       ========================================================================== -->
+    <section class="pillars-section">
+      <div class="container">
+        <div class="pillars-header">
+          <p class="section-kicker" style="justify-content:center;">What we do</p>
+          <h2>Four pillars that drive<br>our impact.</h2>
+        </div>
+
+        <div class="pillars-grid">
+          <!-- Pillar 1 -->
+          <article class="pillar-card">
+            <div class="pillar-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3 class="pillar-title">Zebrafish &amp; Aquatic Biodiversity</h3>
+            <p class="pillar-desc">Investigating zebrafish and other freshwater fish through ecological studies, morphometric characterization, molecular research, and habitat assessment to understand and conserve Nepal's aquatic biodiversity.</p>
+          </article>
+
+          <!-- Pillar 2 -->
+          <article class="pillar-card">
+            <div class="pillar-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </div>
+            <h3 class="pillar-title">Molecular &amp; Phenotypic Research</h3>
+            <p class="pillar-desc">Advancing molecular diagnostics, genetic characterization, and phenotypic assessment to support scientific discovery, disease identification, and improved understanding of biological diversity.</p>
+          </article>
+
+          <!-- Pillar 3 -->
+          <article class="pillar-card">
+            <div class="pillar-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="pillar-title">Sustainable Agriculture &amp; Livestock</h3>
+            <p class="pillar-desc">Supporting crop protection, indigenous and improved livestock research, climate-resilient agricultural practices, and sustainable production systems to strengthen Nepal's food security.</p>
+          </article>
+
+          <!-- Pillar 4 -->
+          <article class="pillar-card">
+            <div class="pillar-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19 12H2"/></svg>
+            </div>
+            <h3 class="pillar-title">Climate Change &amp; Conservation</h3>
+            <p class="pillar-desc">Studying environmental change and its effects on biodiversity and agricultural systems while promoting conservation, evidence-based policy, and sustainable management of natural resources.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       MEDIA / VIDEO BANNER SECTION
+       ========================================================================== -->
+    <section class="media-banner">
+      <div class="video-play-badge">
+        <span>▷</span> Watch video
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       RECENT NEWS SECTION (3 CARDS IN A ROW)
+       ========================================================================== -->
+    <section class="recent-news-section">
+      <div class="container">
+        <div class="recent-news-header">
+          <p class="section-kicker">Latest Updates</p>
+          <h2 class="about-title" style="margin-bottom:0;">Recent News</h2>
+        </div>
+
+        <div class="news-grid">
+          <!-- News Card 1 -->
+          <article class="news-card">
+            <a href="news.html" class="news-image-wrap">
+              <img src="Image/mou1.jpeg" alt="Wild Zebrafish Research Discovery">
+            </a>
+            <div class="news-content">
+              <div class="news-date"> November 6, 2026</div>
+              <h3 class="news-title"><a href="news.html">Agreement signed between Agriculture and Forestry University and NZINC</a></h3>
+              <p class="news-excerpt">A mutual agreement to promote collaborative research, academic exchange, and scientific cooperation in zebrafish research, agriculture, and related sciences.</p>
+              <a href="news.html" class="news-link">Read Full Story ↗</a>
+            </div>
+          </article>
+         <!-- News Card 2 -->
+          <article class="news-card">
+            <a href="news.html" class="news-image-wrap">
+              <img src="Image/dukenzinc.png" alt="Community Agriculture Resilience Initiative">
+            </a>
+            <div class="news-content">
+              <div class="news-date"> August 08, 2026</div>
+              <h3 class="news-title"><a href="news.html">MoU Signed between NZINC and Duke University</a></h3>
+              <p class="news-excerpt">Establishing a collaborative research partnership between NZINC and Duke University through a Memorandum of Understanding (MoU) to advance research on native zebrafish, aquatic biodiversity, and river ecosystem conservation in Nepal.</p>
+              <a href="news.html" class="news-link">Read Full Story ↗</a>
+            </div>
+          </article>
+          <!-- News Card 3 -->
+          <article class="news-card">
+            <a href="news.html" class="news-image-wrap">
+              <img src="Image/NZINC Nepal Nature Center Banner.png" alt="Molecular Diagnostics Workshop">
+            </a>
+            <div class="news-content">
+              <div class="news-date">September 15, 2026</div>
+              <h3 class="news-title"><a href="news.html">NZINC Establishment</a></h3>
+              <p class="news-excerpt">NZINC is legally registered with the District Administration Office, Chitwan, and affiliated with the Social Welfare Council of Nepal.</p>
+              <a href="news.html" class="news-link">Read Full Story ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       ONGOING PROJECTS SECTION
+       ========================================================================== -->
+    <section class="projects-section">
+      <div class="container">
+        <div class="projects-header">
+          <p class="section-kicker">Ongoing Projects</p>
+          <h2 class="about-title" style="margin-bottom:0;">Nepal Zebrafish &amp; Aquatic Biodiversity Research</h2>
+        </div>
+
+        <div class="projects-grid-layout">
+          <article class="project-card-vertical" style="background-image: url('https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&fit=crop&w=800&q=80');">
+            <div class="project-card-content">
+              <h3>Nepal Zebrafish &amp; Aquatic Biodiversity Research</h3>
+              <p>Exploring zebrafish populations in their natural habitats through morphometric characterization, habitat assessment, and water quality analysis to understand freshwater biodiversity and environmental influences.</p>
+              <a href="projects.html">Read More ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card-vertical" style="background-image: url('https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80');">
+            <div class="project-card-content">
+              <h3>Molecular &amp; Phenotypic Diagnostics</h3>
+              <p>Applying molecular approaches, genetic characterization, and phenotypic assessment to investigate biological diversity, improve diagnostic capabilities, and support research-driven discoveries.</p>
+              <a href="projects.html">Read More ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card-vertical" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80');">
+            <div class="project-card-content">
+              <h3>Sustainable Agriculture &amp; Climate Resilience</h3>
+              <p>Promoting sustainable crop production, livestock research, crop protection, and climate-resilient agricultural practices to strengthen biodiversity, rural livelihoods, and food security in Nepal.</p>
+              <a href="projects.html">Read More ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       VOLUNTEER CTA SECTION
+       ========================================================================== -->
+    <section class="volunteer-section">
+      <div class="container volunteer-inner">
+        <h2 class="volunteer-title">Become a volunteer</h2>
+        <p class="volunteer-desc">
+          Volunteering is a powerful way to contribute to causes that matter while growing personally and professionally. Your time, skills, and dedication can help drive meaningful change, empower communities, and build a sustainable future. Take the first step today -be the change you wish to see in the world!
+        </p>
+        <a href="contact.html" class="btn-rounded-outline">
+          Join us ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       PARTNERS / COLLABORATORS SECTION
+       ========================================================================== -->
+    <section class="partners-section">
+      <div class="container">
+        <h2 class="partners-title">Our Partners and Collaborators.</h2>
+
+        <div class="partners-grid">
+          <div class="partner-item">
+            <img src="Image/duke.jfif" alt="DUKE University" class="partner-icon-avatar">
+            <span class="partner-name">DUKE University, USA</span>
+          </div>
+          <div class="partner-item">
+            <img src="Image/Oregon-University-Logo.png" alt="University of Oregon" class="partner-icon-avatar">
+            <span class="partner-name">University of Oregon, USA</span>
+          </div>
+          <div class="partner-item">
+            <img src="Image/AFU.png" alt="Agriculture and Forestry University" class="partner-icon-avatar">
+            <span class="partner-name">Agriculture and Forestry University, Nepal</span>
+          </div>
+          <div class="partner-item">
+            <img src="Image/MidWestUniversity_logo.png" alt="Mid-West University" class="partner-icon-avatar">
+            <span class="partner-name">Mid-West University, Nepal</span>
+          </div>
+          <div class="partner-item">
+            <img src="Image/farwestern.png" alt="Far-West University" class="partner-icon-avatar">
+            <span class="partner-name">Far-West University, Nepal</span>
+          </div>
+          <div class="partner-item">
+            <img src="Image/bharatpur.png" alt="Bharatpur Municipality" class="partner-icon-avatar">
+            <span class="partner-name">Bharatpur Municipality</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       SUPPORT / CONTRIBUTE / DONATE BANNER
+       ========================================================================== -->
+    <section class="support-donate-banner">
+      <div class="container support-banner-inner">
+        <h2 class="support-heading-text">
+          Everyone <span class="styled-help">can help!</span>
+        </h2>
+        <a href="donate.html" class="donate-oval-btn">
+          Donate
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+     7. MULTI-COLUMN THEME FOOTER (FULL CORMORANT GARAMOND & INCREASED FONT SIZES)
+     ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid-multi">
+        <!-- Col 1: Brand, Address, Email & Socials -->
+        <div class="footer-col-brand">
+          <h3>NZINC</h3>
+          <p class="sub-org">Nepal Zebrafish in Nature Center</p>
+          <div class="footer-contact-info">
+            <span> Bharatpur-7, Chitwan, Nepal</span>
+            <span><a href="mailto:nzincnepal@gmail.com">nzincnepal@gmail.com</a></span>
+          </div>
+          <div class="social-links">
+            <a href="https://x.com/NZINC_Nepal" class="social-icon-btn" aria-label="Twitter">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/p/Nepal-Zebra-Fish-In-Nature-Center-NZINC-61596320360359/" class="social-icon-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: About & Vision -->
+        <div class="footer-column">
+          <h4>About</h4>
+          <ul>
+            <li><a href="about.html#vision">Our Vision</a></li>
+            <li><a href="about.html#mission">Mission</a></li>
+            <li><a href="about.html#why-community">Why Community?</a></li>
+            <li><a href="about.html#target-group">Target Group</a></li>
+            <li><a href="about.html#sdgs">SDG Goals</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Our Work -->
+        <div class="footer-column">
+          <h4>Our Work</h4>
+          <ul>
+            <li><a href="projects.html#initiatives">Initiatives</a></li>
+            <li><a href="projects.html#completed">Completed Projects</a></li>
+            <li><a href="projects.html#partnerships">Partnership List</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Partners -->
+        <div class="footer-column">
+          <h4>Partners</h4>
+          <ul>
+            <li><a href="partners.html#partners">Partners &amp; Collaborators</a></li>
+            <li><a href="partners.html#donors">Donors</a></li>
+            <li><a href="partners.html#affiliations">Affiliations</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Support & Contact -->
+        <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="contact.html#volunteer">Become a Volunteer</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="resources.html">Resources</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>© 2026 Nepal Zebrafish in Nature Center (NZINC). All rights reserved.</div>
+        <div style="opacity: 1;">Dedicated to Nature, Community, and Well-being.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: Mobile Navigation Toggle + Hero Slider Logic -->
+  <script>
+    // Navigation Drawer Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('is-active');
+    });
+
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const parentItem = toggle.closest('.nav-item');
+          parentItem.classList.toggle('open');
+        }
+      });
+    });
+
+    // Hero Slider Functionality
+    const slides = document.querySelectorAll('.hero-slide');
+    const prevHeroBtn = document.getElementById('prevHeroBtn');
+    const nextHeroBtn = document.getElementById('nextHeroBtn');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    nextHeroBtn.addEventListener('click', () => {
+      nextSlide();
+      resetTimer();
+    });
+
+    prevHeroBtn.addEventListener('click', () => {
+      prevSlide();
+      resetTimer();
+    });
+
+    function startTimer() {
+      slideInterval = setInterval(nextSlide, 5000);
+    }
+
+    function resetTimer() {
+      clearInterval(slideInterval);
+      startTimer();
+    }
+
+    // Auto rotate slides
+    startTimer();
+  </script>
+</body>
+</html>
