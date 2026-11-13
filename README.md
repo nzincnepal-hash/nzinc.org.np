@@ -1,1 +1,1 @@
-##nzinc.org.np.index.html
+##nzinc.github.io/index.html
