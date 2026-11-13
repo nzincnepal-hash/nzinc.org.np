@@ -2,32 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=1280">
-  <meta name="description" content="Careers & Opportunities - Nepal Zebrafish in Nature Center (NZINC)">
-  <title>Careers & Opportunities - NZINC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Us - Nepal Zebrafish in Nature Center (NZINC)">
+  <title>Contact Us - NZINC</title>
   
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Cormorant Garamond (Serif Headers/Titles) & Plus Jakarta Sans (Clean Sans-Serif Body/Minor Text) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   
   <style>
     /* ==========================================================================
-       DESIGN SYSTEM & VARIABLES
+       DESIGN SYSTEM & VARIABLES (Exact Matched with Reference)
        ========================================================================== */
     :root {
       --primary-blue: #1b12b2;
       --primary-hover: #120b8a;
       --cyan-accent: #00b4d8;
       --cyan-light: #e6f7f9;
-      --text-dark: #111418;
-      --text-body: #4a4e54;
-      --text-muted: #73777f;
+      --text-dark: #000000;
+      --text-body: #000000;
+      --text-muted: #111111;
       --bg-light: #f8f9fa;
       --bg-card: #ffffff;
-      --border-color: #e5e7eb;
+      --border-color: #e2e5ec;
       --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
       --max-width: 1380px;
     }
 
@@ -36,8 +36,9 @@
     body {
       font-family: var(--font-main);
       color: var(--text-dark);
-      background-color: #ffffff;
+      background-color: #fcfdfe;
       line-height: 1.6;
+      font-size: 16px;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
@@ -51,7 +52,7 @@
     }
 
     /* ==========================================================================
-       1. NAVIGATION BAR
+       EXACT NAVIGATION BAR DESIGN WITH DROPDOWNS
        ========================================================================== */
     .site-header {
       position: sticky;
@@ -60,8 +61,7 @@
       width: 100%;
       z-index: 1000;
       background-color: #ffffff;
-      border-bottom: 1.5px solid #e5e7eb;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+      border-bottom: 1.5px solid #222222;
     }
 
     .header-inner {
@@ -69,14 +69,16 @@
       align-items: center;
       height: 80px;
       width: 100%;
-      padding: 0 30px;
+      max-width: 100%;
+      padding: 0;
     }
 
+    /* Left Brand Section with Duke Logo Image */
     .brand-section {
       display: flex;
       align-items: center;
       gap: 16px;
-      padding-right: 28px;
+      padding: 0 28px;
       height: 100%;
       border-right: 1.5px solid #666666;
       background: #ffffff;
@@ -91,20 +93,21 @@
     }
 
     .brand-duke-logo {
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       object-fit: cover;
     }
 
     .brand-title {
       font-family: var(--font-serif);
-      font-size: 20px;
+      font-size: 24px;
       font-weight: 700;
-      color: var(--primary-blue);
+      color: #1b12b2;
       letter-spacing: 0.02em;
     }
 
+    /* Main Navigation Links with Dropdown Menu Hovering */
     .nav-links {
       display: flex;
       align-items: center;
@@ -122,10 +125,10 @@
     }
 
     .nav-item > a {
-      color: #2b2b2b;
+      color: #000000;
       font-family: var(--font-serif);
-      font-size: 16px;
-      font-weight: 500;
+      font-size: 20px;
+      font-weight: 800;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -134,27 +137,17 @@
       transition: color 0.2s ease;
     }
 
-    .nav-item.active > a {
-      color: var(--primary-blue);
-      font-weight: 600;
-      position: relative;
-    }
-
-    .nav-item.active > a::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background-color: var(--primary-blue);
-      border-radius: 2px 2px 0 0;
-    }
-
     .nav-item:hover > a {
-      color: var(--primary-blue);
+      color: #1b12b2;
     }
 
+    .nav-item > a span.arrow {
+      font-size: 10px;
+      color: #000000;
+      transform: translateY(1px);
+    }
+
+    /* Dropdown Menu Styles (Using Cormorant Garamond / Serif) */
     .dropdown-menu {
       position: absolute;
       top: 100%;
@@ -162,16 +155,25 @@
       transform: translateX(-50%);
       background-color: #1e1e1e;
       min-width: 210px;
-      padding: 20px 24px;
+      padding: 22px 24px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 16px;
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.25s ease, visibility 0.25s ease;
       z-index: 1001;
-      border-radius: 0 0 6px 6px;
+    }
+
+    .dropdown-menu::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: 35%;
+      right: 35%;
+      height: 2px;
+      background-color: #ffffff;
     }
 
     .nav-item:hover .dropdown-menu {
@@ -180,17 +182,22 @@
     }
 
     .dropdown-menu a {
-      color: #f1f1f1;
-      font-family: var(--font-main);
-      font-size: 14px;
+      color: #ffffff;
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.3;
       transition: color 0.2s ease;
       white-space: nowrap;
     }
 
-    .dropdown-menu a:hover { color: var(--cyan-accent); }
+    .dropdown-menu a:hover {
+      color: #00b4d8;
+    }
 
+    /* Right Search & Mobile Toggle Controls */
     .header-right {
-      padding-left: 20px;
+      padding: 0 28px;
       display: flex;
       align-items: center;
       gap: 16px;
@@ -199,12 +206,12 @@
     .nav-search-btn {
       background: transparent;
       border: none;
-      color: var(--primary-blue);
+      color: #1b12b2;
       cursor: pointer;
       font-size: 18px;
       display: flex;
       align-items: center;
-      padding: 8px;
+      justify-content: center;
     }
 
     .mobile-nav-toggle {
@@ -216,12 +223,17 @@
       color: var(--primary-blue);
     }
 
+    .mobile-nav-toggle svg {
+      width: 28px;
+      height: 28px;
+    }
+
     /* ==========================================================================
        2. HERO SECTION
        ========================================================================== */
     .careers-hero {
       position: relative;
-      height: 360px;
+      height: 380px;
       background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
       display: flex;
       align-items: center;
@@ -244,47 +256,50 @@
     }
 
     .careers-hero-dots {
-      font-size: 44px;
+      font-size: 40px;
       color: #ffffff;
       line-height: 1;
       letter-spacing: 4px;
     }
 
     .careers-hero h1 {
-      font-size: clamp(38px, 6vw, 68px);
+      font-size: clamp(48px, 8vw, 90px);
       font-weight: 700;
-      font-family: var(--font-main);
+      font-family: var(--font-serif);
       color: #ffffff;
       letter-spacing: -0.02em;
-      line-height: 1.1;
+      line-height: 1;
     }
 
     /* ==========================================================================
        3. CAREERS LISTING SECTION
        ========================================================================== */
     .careers-section {
-      padding: 70px 0 100px;
+      padding: 100px 0 120px;
       background-color: #ffffff;
     }
 
     .section-kicker {
+      font-family: var(--font-serif);
       font-size: 14px;
-      font-weight: 500;
-      color: var(--text-muted);
+      font-weight: 700;
+      color: #000000;
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 12px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     .section-kicker::before {
       content: "°°";
       color: var(--primary-blue);
-      font-weight: bold;
     }
 
     .section-main-title {
-      font-size: clamp(32px, 4.5vw, 56px);
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 4.5vw, 56px);
       font-weight: 700;
       color: var(--primary-blue);
       line-height: 1.15;
@@ -310,7 +325,8 @@
     }
 
     .opportunity-type {
-      font-size: 20px;
+      font-family: var(--font-serif);
+      font-size: 24px;
       font-weight: 700;
       color: var(--primary-blue);
     }
@@ -340,9 +356,11 @@
     }
 
     .opportunity-desc {
+      font-family: var(--font-serif);
       font-size: 16px;
-      color: var(--text-body);
+      color: #000000;
       line-height: 1.6;
+      font-weight: 400;
     }
 
     .action-btn-wrap {
@@ -350,27 +368,28 @@
       justify-content: flex-end;
     }
 
-    .pill-action-btn {
+    .btn-rounded-outline {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      padding: 10px 24px;
-      border: 1.5px solid var(--primary-blue);
-      border-radius: 50px;
-      color: var(--primary-blue);
-      font-size: 14.5px;
+      gap: 8px;
+      padding: 12px 36px;
+      border: 1.5px solid var(--font-serif);
+      border-radius: 0px;
+      color: #000000;
+      background: #ffffff;
+      font-family: var(--font-serif);
+      font-size: 15px;
       font-weight: 600;
-      background: transparent;
-      transition: all 0.25s ease;
+      transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
       white-space: nowrap;
     }
 
-    .pill-action-btn:hover {
-      background-color: var(--primary-blue);
+    .btn-rounded-outline:hover {
+      background: var(--cyan-accent);
       color: #ffffff;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(27, 18, 178, 0.2);
+      border-color: var(--cyan-accent);
     }
 
     /* ==========================================================================
@@ -379,7 +398,8 @@
     .support-donate-banner {
       background-color: #212322;
       color: #ffffff;
-      padding: 90px 0;
+      padding: 100px 0;
+      position: relative;
     }
 
     .support-banner-inner {
@@ -390,85 +410,87 @@
     }
 
     .support-heading-text {
-      font-size: clamp(40px, 6vw, 90px);
+      font-family: var(--font-serif);
+      font-size: clamp(48px, 6.5vw, 100px);
       font-weight: 400;
       color: #ffffff;
-      letter-spacing: -0.03em;
-      line-height: 1;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
     }
 
     .support-heading-text .styled-help {
-      background: linear-gradient(90deg, #ffb2cc 0%, #79b0ff 33%, #f3cf7a 66%, #85e8ff 100%);
+      background: linear-gradient(90deg, #ffb2cc, #79b0ff, #f3cf7a, #85e8ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: 500;
     }
 
     .donate-oval-btn {
-      width: 160px;
-      height: 160px;
+      width: 170px;
+      height: 170px;
       border-radius: 50%;
-      border: 1.5px solid #e0a526;
+      border: 1.5px solid #ffcc66;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #ffffff;
+      font-family: var(--font-serif);
       font-size: 18px;
-      font-weight: 500;
+      font-weight: 600;
       flex-shrink: 0;
-      transition: all 0.3s ease;
-      background: transparent;
+      transition: background 0.3s ease;
     }
 
     .donate-oval-btn:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: #ffffff;
-      transform: scale(1.04);
+      background: rgba(255, 255, 255, 0.08);
     }
 
     /* ==========================================================================
-       5. MULTI-COLUMN THEME FOOTER
+       7. COMPACT MULTI-COLUMN THEME FOOTER (REMOTE GARAMOND SCRIPT & INCREASED SIZE)
        ========================================================================== */
     .site-footer {
       background-color: #ffffff;
-      color: #222222;
-      padding: 22px 0 10px;
-      font-family: var(--font-main);
+      color: #000000;
+      padding: 30px 0 16px;
+      font-family: var(--font-serif);
     }
 
     .footer-grid-multi {
       display: grid;
       grid-template-columns: 1.5fr repeat(4, 1fr);
-      gap: 20px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid #dddddd;
+      gap: 24px;
+      padding-bottom: 18px;
+      border-bottom: 1.5px solid #cccccc;
     }
 
     .footer-col-brand h3 {
       font-family: var(--font-serif);
-      font-size: 26px;
+      font-size: 32px;
       font-weight: 700;
-      color: #111111;
-      margin-bottom: 2px;
+      color: #000000;
+      margin-bottom: 4px;
       letter-spacing: 0.02em;
     }
 
     .footer-col-brand p.sub-org {
-      font-size: 14px;
+      font-family: var(--font-serif);
+      font-size: 18px;
       font-weight: 600;
-      color: #333333;
-      margin-bottom: 8px;
+      color: #000000;
+      margin-bottom: 12px;
       line-height: 1.4;
     }
 
     .footer-contact-info {
       display: flex;
       flex-direction: column;
-      gap: 5px;
-      font-size: 12px;
+      gap: 6px;
+      font-family: var(--font-serif);
+      font-size: 17px;
       font-weight: 500;
-      color: #333333;
-      margin-bottom: 8px;
+      color: #000000;
+      opacity: 1;
+      margin-bottom: 12px;
     }
 
     .footer-contact-info a {
@@ -485,13 +507,13 @@
     .social-links {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-top: 6px;
+      gap: 10px;
+      margin-top: 8px;
     }
 
     .social-icon-btn {
-      width: 30px;
-      height: 30px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
       background: #eaf5f8;
       color: #007b9e;
@@ -506,18 +528,19 @@
     }
 
     .social-icon-btn svg {
-      width: 15px;
-      height: 15px;
+      width: 17px;
+      height: 17px;
       fill: #007b9e;
     }
 
     .footer-column h4 {
-      font-size: 13px;
+      font-family: var(--font-serif);
+      font-size: 19px;
       font-weight: 700;
-      color: #111111;
-      margin-bottom: 8px;
-      padding-bottom: 5px;
-      border-bottom: 1px solid #dddddd;
+      color: #000000;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1.5px solid #cccccc;
       letter-spacing: 0.03em;
       text-transform: uppercase;
     }
@@ -526,15 +549,17 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
       margin: 0;
       padding: 0;
     }
 
     .footer-column ul li a {
-      font-size: 12.5px;
+      font-family: var(--font-serif);
+      font-size: 17px;
       font-weight: 500;
-      color: #333333;
+      color: #000000;
+      opacity: 1;
       text-decoration: none;
       transition: color 0.2s ease;
     }
@@ -547,16 +572,102 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-top: 10px;
-      font-size: 11px;
+      padding-top: 14px;
+      font-family: var(--font-serif);
+      font-size: 16px;
       font-weight: 500;
-      color: #444444;
+      color: #000000;
+      opacity: 1;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 10px;
     }
 
     /* Responsive Design */
     @media (max-width: 992px) {
+      .footer-grid-multi {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .footer-col-brand {
+        grid-column: span 3;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container { width: calc(100% - 32px); }
+      .header-inner { justify-content: space-between; padding: 0 16px; }
+      
+      .mobile-nav-toggle { display: block; }
+      
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        border-bottom: 1.5px solid #222222;
+        padding: 20px 24px;
+        height: auto;
+        gap: 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.35s ease, opacity 0.3s ease, visibility 0.3s ease;
+      }
+
+      .nav-links.is-active {
+        max-height: 600px;
+        opacity: 1;
+        visibility: visible;
+        overflow-y: auto;
+      }
+
+      .nav-item {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .nav-item:last-child {
+        border-bottom: none;
+      }
+
+      .nav-item > a {
+        width: 100%;
+        padding: 14px 0;
+        justify-content: space-between;
+        font-size: 20px;
+      }
+
+      .dropdown-menu {
+        position: static;
+        transform: none;
+        background-color: #262626;
+        width: 100%;
+        padding: 12px 18px;
+        box-shadow: none;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        margin-bottom: 12px;
+        border-radius: 6px;
+      }
+
+      .dropdown-menu::before {
+        display: none;
+      }
+
+      .nav-item.open .dropdown-menu {
+        display: flex;
+      }
+
       .opportunity-row {
         grid-template-columns: 1fr;
         gap: 16px;
@@ -564,100 +675,140 @@
       .action-btn-wrap {
         justify-content: flex-start;
       }
-      .footer-grid-multi {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-      }
-      .footer-col-brand {
-        grid-column: span 3;
-      }
-    }
-
-    @media (max-width: 768px) {
       .support-banner-inner {
         flex-direction: column;
         text-align: center;
       }
-      .footer-grid-multi {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 18px 14px;
-      }
-      .footer-col-brand {
-        grid-column: span 2;
-      }
+      .footer-grid-multi { grid-template-columns: 1fr; gap: 30px; }
+      .footer-bottom-bar { flex-direction: column; text-align: center; gap: 15px; }
+      .donate-oval-btn { width: 140px; height: 140px; font-size: 18px; }
     }
   
-    /* Touch/mobile devices: bigger navigation bar (desktop/laptop unchanged) */
-    @media (hover: none) and (pointer: coarse) {
-      html, body { overflow-x: hidden; }
-      .header-inner { height: 110px; }
-      .brand-section { padding: 0 24px; gap: 14px; flex-shrink: 0; white-space: nowrap; }
-      .brand-logo-wrap { gap: 14px; }
-      .brand-duke-logo { width: 64px; height: 64px; flex-shrink: 0; }
-      .brand-title { font-size: 34px; }
-      .nav-links { gap: 30px; flex-wrap: nowrap; min-width: 0; }
-      .nav-item > a { font-size: 26px; gap: 8px; white-space: nowrap; }
-      .nav-item > a span.arrow { font-size: 13px; }
-      .dropdown-menu { min-width: 260px; padding: 28px 30px; gap: 20px; }
-      .dropdown-menu a { font-size: 24px; }
-      .header-right { padding: 0 28px; flex-shrink: 0; }
-      .nav-search-btn svg { width: 32px; height: 32px; }
+    /* ==========================================================================
+       MOBILE VIEW (phones): large clear type, MENU bar and accordion navigation
+       ========================================================================== */
+    @media (max-width: 768px) {
+      html { -webkit-text-size-adjust: 100%; }
+      body { font-size: 18px; line-height: 1.65; overflow-x: hidden; }
+      img, video, iframe, svg { max-width: 100%; }
+
+      /* --- Top bar: logo + MENU --- */
+      .site-header { border-top: 4px solid #1b12b2; border-bottom: 1px solid #d5d9e6; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+      .header-inner { height: 76px; padding: 0 16px; justify-content: space-between; position: relative; }
+      .brand-section { padding: 0; border-right: none; gap: 10px; flex: 1; min-width: 0; }
+      .brand-logo-wrap { gap: 12px; }
+      .brand-duke-logo { width: 52px; height: 52px; flex-shrink: 0; }
+      .brand-title { font-size: 30px; letter-spacing: .02em; white-space: nowrap; }
+      .header-right { padding: 0; gap: 0; flex-shrink: 0; }
+      .nav-search-btn { display: none; }
+      .mobile-nav-toggle { display: flex; align-items: center; gap: 8px; padding: 10px 4px; font-family: var(--font-main, sans-serif); font-weight: 700; font-size: 18px; letter-spacing: .04em; color: #1b12b2; }
+      .mobile-nav-toggle::before { content: "MENU"; }
+      .mobile-nav-toggle[aria-expanded="true"]::before { content: "CLOSE"; }
+      .mobile-nav-toggle svg { width: 26px; height: 26px; }
+
+      /* --- Menu panel --- */
+      .nav-links { position: absolute; top: 100%; left: 0; right: 0; width: 100%; flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 0; padding: 8px 16px 24px; background: #fff; border-bottom: 3px solid #1b12b2; box-shadow: 0 14px 24px rgba(0,0,0,.18); max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; height: auto; transition: max-height .35s ease, opacity .25s ease, visibility .25s ease; }
+      .nav-links.is-active { max-height: calc(100vh - 80px); overflow-y: auto; opacity: 1; visibility: visible; -webkit-overflow-scrolling: touch; }
+      .nav-item { display: block; width: 100%; height: auto; border-bottom: 1px solid #e2e5ec; }
+      .nav-item:last-child { border-bottom: none; }
+      .nav-item > a { display: flex; align-items: center; justify-content: space-between; width: 100%; height: auto; min-height: 58px; padding: 12px 6px; font-size: 22px; font-weight: 700; color: #111; white-space: normal; }
+      .nav-item.open > a { color: #1b12b2; }
+      .nav-item > a span.arrow { display: inline-block; width: 11px; height: 11px; border-right: 2.5px solid #1b12b2; border-bottom: 2.5px solid #1b12b2; transform: rotate(45deg); margin: 0 6px 4px 12px; font-size: 0; transition: transform .25s ease; }
+      .nav-item.open > a span.arrow { transform: rotate(-135deg); margin-bottom: -2px; }
+      .nav-item .dropdown-menu { position: static; transform: none; width: 100%; min-width: 0; display: none; opacity: 1; visibility: visible; background: #f4f6fb; box-shadow: none; border-radius: 0; margin: 0 0 12px; padding: 6px 0 6px 14px; gap: 0; border-left: 3px solid #c8891a; }
+      .nav-item .dropdown-menu::before { display: none; }
+      .nav-item.open .dropdown-menu { display: flex; flex-direction: column; }
+      .nav-item:hover .dropdown-menu { opacity: 1; visibility: visible; }
+      .nav-item .dropdown-menu a { display: block; padding: 13px 8px; font-size: 19px; font-weight: 600; color: #222; white-space: normal; border-bottom: 1px solid #e2e5ec; }
+      .nav-item .dropdown-menu a:last-child { border-bottom: none; }
+
+      body::after, .watermark-bg-text { display: none !important; }
+      main section { overflow-x: clip; }
+      [class*="grid"] > * { min-width: 0; }
+      main p, main h1, main h2, main h3, main li { overflow-wrap: anywhere; }
+      /* --- Content typography --- */
+      .container { width: calc(100% - 32px); }
+      main p, main li, main dd, main td, main th, main blockquote { font-size: 18px !important; line-height: 1.7 !important; }
+      main h1 { font-size: clamp(34px, 10vw, 44px) !important; line-height: 1.1 !important; }
+      main h2 { font-size: clamp(28px, 8vw, 34px) !important; line-height: 1.15 !important; }
+      main h3 { font-size: 24px !important; line-height: 1.25 !important; }
+      main h4 { font-size: 21px !important; line-height: 1.3 !important; }
+      main a.btn, main button, main [class*="btn"] { min-height: 48px; font-size: 18px !important; }
+      main section { padding-top: 56px; padding-bottom: 56px; }
+      main [class*="grid"], main [class*="cards"], main [class*="-row"], main [class*="two-col"], main [class*="split"] { grid-template-columns: 1fr !important; }
+
+      /* --- Footer --- */
+      .site-footer a, .site-footer li, .site-footer p, .site-footer span, .site-footer div { font-size: 17px; }
+      .site-footer h3 { font-size: 30px; }
+      .site-footer h4 { font-size: 20px; }
+      .footer-grid-multi { grid-template-columns: 1fr !important; gap: 28px; }
+      .footer-bottom-bar { flex-direction: column; text-align: center; gap: 10px; font-size: 15px; }
     }
   </style>
 </head>
 <body>
 
   <!-- ==========================================================================
-     1. NAVIGATION BAR
+     HEADER / NAVIGATION WITH DROPDOWNS & DUKE LOGO
      ========================================================================== -->
   <header class="site-header">
     <div class="header-inner">
-      <a href="index.html" class="brand-section">
+      <a href="index.html" class="brand-section" aria-label="Go to Home">
         <div class="brand-logo-wrap">
           <img src="Image/english.png" alt="NZINC Logo" class="brand-duke-logo" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80';">
           <span class="brand-title">NZINC</span>
         </div>
       </a>
       
-      <nav class="nav-links" id="navLinks">
-        <div class="nav-item"><a href="index.html">Home</a></div>
+      <nav class="nav-links" id="navLinks" aria-label="Main Menu">
         <div class="nav-item">
-          <a href="about.html">About Us <span>⌄</span></a>
+          <a href="index.html">Home</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="about.html" class="dropdown-toggle">About Us <span class="arrow"></span></a>
           <div class="dropdown-menu">
-            <a href="about.html#vision">Our Vision</a>
-            <a href="about.html#mission">Mission</a>
-            <a href="about.html#why-community">Why Community?</a>
-            <a href="about.html#target-group">Target Group</a>
-            <a href="about.html#sdgs">SDG Goals</a>
+            <a href="about.html#who-we-are">Who are we?</a>
+            <a href="about.html#mission">Our Mission</a>
+            <a href="about.html#community">Why Community?</a>
+            <a href="about.html#impact">Our Impact</a>
           </div>
         </div>
+
         <div class="nav-item">
-          <a href="projects.html">Our Work <span>⌄</span></a>
+          <a href="projects.html" class="dropdown-toggle">Our Work <span class="arrow"></span></a>
           <div class="dropdown-menu">
-            <a href="projects.html#initiatives">Initiatives</a>
-            <a href="projects.html#completed">Completed Projects</a>
-            <a href="projects.html#partnerships">Partnership List</a>
+            <a href="projects.html#focus-areas">Focus Areas</a>
+            <a href="projects.html#projects">Projects</a>
+            <a href="projects.html#stories">Success Stories</a>
+            <a href="projects.html#initiatives">Established Initiatives</a>
           </div>
         </div>
+
         <div class="nav-item">
-          <a href="partners.html">Partners <span>⌄</span></a>
+          <a href="partners.html" class="dropdown-toggle">Partners <span class="arrow"></span></a>
           <div class="dropdown-menu">
             <a href="partners.html#partners">Partners</a>
             <a href="partners.html#donors">Donors</a>
+            <a href="partners.html#affiliations">Affiliations</a>
           </div>
         </div>
+
         <div class="nav-item">
-          <a href="resources.html">Resources <span>⌄</span></a>
+          <a href="#resources" class="dropdown-toggle">Resources <span class="arrow"></span></a>
           <div class="dropdown-menu">
-            <a href="resources.html#publications">Publications</a>
-            <a href="resources.html#media">Media Library</a>
+            <a href="publications.html">Publications</a>
+            <a href="gallery.html">Media Library</a>
+            <a href="news.html">News</a>
+            <a href="faq.html">FAQ</a>
           </div>
         </div>
-        <div class="nav-item active">
-          <a href="contact.html">Get Involved <span>⌄</span></a>
+
+        <div class="nav-item">
+          <a href="contact.html" class="dropdown-toggle">Get Involved <span class="arrow"></span></a>
           <div class="dropdown-menu">
             <a href="donate.html">Donate</a>
-            <a href="contact.html#volunteer">Become a Volunteer</a>
+            <a href="volunteer.html">Become a Volunteer</a>
             <a href="careers.html">Careers</a>
             <a href="contact.html">Contact Us</a>
           </div>
@@ -666,7 +817,17 @@
 
       <div class="header-right">
         <button class="nav-search-btn" aria-label="Search">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <button class="mobile-nav-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
         </button>
       </div>
     </div>
@@ -696,17 +857,17 @@
           
           <!-- Proposal Item 1 -->
           <div class="opportunity-row">
-            <div class="opportunity-type">Call for Proposal</div>
+            <div class="opportunity-type">Call for Collaborators</div>
             <div class="opportunity-detail">
               <div class="check-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg>
               </div>
               <p class="opportunity-desc">
-                Capacity need assessment of stakeholders including duty bearers and service holders
+                Assessment of Zebrafish diversity and water quality in Chitwan, Nepal
               </p>
             </div>
             <div class="action-btn-wrap">
-              <a href="contact.html" class="pill-action-btn">Read More ↗</a>
+              <a href="contact.html" class="btn-rounded-outline">Read More ↗</a>
             </div>
           </div>
 
@@ -718,11 +879,11 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg>
               </div>
               <p class="opportunity-desc">
-                Conducting Water Sources and Water Bodies Inventory in Kandra and Kateni Sub - Watersheds of Kailali
+                Georefrencing of Waterbodies for Zebrafish locations
               </p>
             </div>
             <div class="action-btn-wrap">
-              <a href="contact.html" class="pill-action-btn">Read More ↗</a>
+              <a href="contact.html" class="btn-rounded-outline">Read More ↗</a>
             </div>
           </div>
 
@@ -738,7 +899,7 @@
               </p>
             </div>
             <div class="action-btn-wrap">
-              <a href="contact.html" class="pill-action-btn">Contact Us ↗</a>
+              <a href="contact.html" class="btn-rounded-outline">Contact Us ↗</a>
             </div>
           </div>
 
@@ -747,7 +908,7 @@
     </section>
 
     <!-- ==========================================================================
-       4. SUPPORT BANNER
+       4. SUPPORT BANNER ("Everyone can help!")
        ========================================================================== -->
     <section class="support-donate-banner">
       <div class="container support-banner-inner">
@@ -762,25 +923,24 @@
   </main>
 
   <!-- ==========================================================================
-     5. MULTI-COLUMN THEME FOOTER
+     7. MULTI-COLUMN THEME FOOTER (FULL CORMORANT GARAMOND & INCREASED FONT SIZES)
      ========================================================================== -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid-multi">
-        
         <!-- Col 1: Brand, Address, Email & Socials -->
         <div class="footer-col-brand">
           <h3>NZINC</h3>
           <p class="sub-org">Nepal Zebrafish in Nature Center</p>
           <div class="footer-contact-info">
-            <span>📍 Bharatpur-7, Chitwan, Nepal</span>
-            <span>✉️ <a href="mailto:nzincnepal@gmail.com">nzincnepal@gmail.com</a></span>
+            <span> Bharatpur-7, Chitwan, Nepal</span>
+            <span><a href="mailto:nzincnepal@gmail.com">nzincnepal@gmail.com</a></span>
           </div>
           <div class="social-links">
-            <a href="#" class="social-icon-btn" aria-label="Twitter">
+            <a href="https://x.com/NZINC_Nepal" class="social-icon-btn" aria-label="Twitter">
               <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
-            <a href="#" class="social-icon-btn" aria-label="Facebook">
+            <a href="https://www.facebook.com/p/Nepal-Zebra-Fish-In-Nature-Center-NZINC-61596320360359/" class="social-icon-btn" aria-label="Facebook">
               <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
             </a>
             <a href="#" class="social-icon-btn" aria-label="Instagram">
@@ -792,7 +952,7 @@
           </div>
         </div>
 
-        <!-- Col 2: About -->
+        <!-- Col 2: About & Vision -->
         <div class="footer-column">
           <h4>About</h4>
           <ul>
@@ -824,13 +984,12 @@
           </ul>
         </div>
 
-        <!-- Col 5: Support -->
+        <!-- Col 5: Support & Contact -->
         <div class="footer-column">
           <h4>Support</h4>
           <ul>
             <li><a href="donate.html">Donate</a></li>
             <li><a href="contact.html#volunteer">Become a Volunteer</a></li>
-            <li><a href="careers.html">Careers</a></li>
             <li><a href="contact.html">Contact Us</a></li>
             <li><a href="resources.html">Resources</a></li>
           </ul>
@@ -840,10 +999,32 @@
       <!-- Bottom Bar -->
       <div class="footer-bottom-bar">
         <div>© 2026 Nepal Zebrafish in Nature Center (NZINC). All rights reserved.</div>
-        <div style="opacity: 0.9;">Dedicated to Nature, Community, and Well-being.</div>
+        <div style="opacity: 1;">Dedicated to Nature, Community, and Well-being.</div>
       </div>
     </div>
   </footer>
 
+  <!-- Scripts: Mobile Navigation Toggle -->
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('is-active');
+    });
+
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const parentItem = toggle.closest('.nav-item');
+          parentItem.classList.toggle('open');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
